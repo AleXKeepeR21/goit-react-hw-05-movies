@@ -30,8 +30,10 @@ export async function FetchGetMovieCredits(id) {
   const res =
     await fetch(`${apiUrl}/movie/${id}/credits?api_key=${apiKey}&language=en-US
   `);
-  const response = await res.json();
-  return response.data.cast;
+  return await res.json();
+
+  // const response = await res.json();
+  // return response.data.cast;
 }
 
 export async function FetchGetMovieReviews(id, page = 1) {

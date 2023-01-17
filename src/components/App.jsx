@@ -4,7 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { Home } from './Home/Home';
 import { MoviesPage } from './Movies/MoviesPage';
-import { MoviesDetails } from './MoviesDetails/MoviesDetails';
+import { MoviesDetails } from './Movies/MoviesDetails/MoviesDetails';
+import { MoviesCast } from './Movies/MoviesCast/MoviesCast';
 
 export const App = () => {
   return (
@@ -15,7 +16,9 @@ export const App = () => {
         {/* <Route path="movies" element={<Outlet />}>
           <Route index element={<MoviesPage />} /> */}
         <Route path="movies" element={<MoviesPage />}></Route>
-        <Route path="movies/:movieId" element={<MoviesDetails />} />
+        <Route path="movies/:movieId" element={<MoviesDetails />}>
+          <Route path="cast" element={<MoviesCast />} />
+        </Route>
       </Route>
     </Routes>
   );
