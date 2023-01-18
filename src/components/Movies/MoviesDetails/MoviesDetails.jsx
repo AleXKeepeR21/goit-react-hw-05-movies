@@ -34,9 +34,9 @@ export const MoviesDetails = () => {
           {moviesDetails.title}({moviesDetails.release_date.slice(0, 4)})
         </h2>
         <p>User Score: {`${Math.round(moviesDetails.vote_average * 10)}%`}</p>
-        <h3>Overview</h3>
+        <h3>Overview:</h3>
         <p>{moviesDetails.overview}</p>
-        <h3>Genres</h3>
+        <h3>Genres:</h3>
         {/* <ul>
           {moviesDetails.genres.map(genre => (
             <li key={genre.id}>{genre.name}</li>
@@ -53,8 +53,10 @@ export const MoviesDetails = () => {
       </div>
 
       <div>
-        <h3>Cast</h3>
+        <h3>Cast:</h3>
         <Link to="cast">Cast</Link>
+        <h3>Reviews:</h3>
+        <Link to="reviews">Reviews</Link>
       </div>
       <Outlet />
     </>

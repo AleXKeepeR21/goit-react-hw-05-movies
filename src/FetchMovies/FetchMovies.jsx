@@ -40,8 +40,9 @@ export async function FetchGetMovieReviews(id, page = 1) {
   const res =
     await fetch(`${apiUrl}/movie/${id}/reviews?api_key=${apiKey}&language=en-US&page=${page}
   `);
-  const response = await res.json();
-  return response.data.results;
+  return await res.json();
+  // const response = await res.json();
+  // return response.data.results;
 }
 
 // import axios from 'axios';
