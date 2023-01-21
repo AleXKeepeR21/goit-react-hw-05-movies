@@ -12,7 +12,7 @@ export async function fetchSearchMovies(query, page = 1) {
     await fetch(`${apiUrl}/search/movie?api_key=${apiKey}&query=${query}&language=en-US&page=${page}&include_adult=false
     `);
   const response = await res.json();
-  return response.data;
+  return response.results;
 }
 
 export async function fetchGetMovieDetails(id) {
