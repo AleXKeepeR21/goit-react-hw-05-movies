@@ -3,10 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 // import { Header } from './Header/Header';
 import { Layout } from './Layout/Layout';
 import { Home } from './Home/Home';
-import { MoviesPage } from './Movies/MoviesPage';
+import { MoviesPage } from './Movies/MoviesPage/MoviesPage';
 import { MoviesDetails } from './Movies/MoviesDetails/MoviesDetails';
 import { MoviesCast } from './Movies/MoviesCast/MoviesCast';
 import { MoviesReviews } from './Movies/MoviesReviews/MoviesReviews';
+import { NotFound } from './Movies/NotFound/NotFound';
 
 export const App = () => {
   return (
@@ -21,6 +22,7 @@ export const App = () => {
           <Route path="cast" element={<MoviesCast />} />
           <Route path="reviews" element={<MoviesReviews />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
