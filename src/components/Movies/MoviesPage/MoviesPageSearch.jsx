@@ -6,7 +6,7 @@ import { MoviesPage } from './MoviesPage';
 
 export const MoviesPageSearch = () => {
   const [searchParams] = useSearchParams();
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState([]);
   const query = searchParams.get('query') ?? '';
 
   useEffect(() => {
