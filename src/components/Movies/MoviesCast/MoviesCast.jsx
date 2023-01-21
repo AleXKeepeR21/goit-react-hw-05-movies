@@ -24,7 +24,11 @@ const MoviesCast = () => {
           <li key={moviesCast.id}>
             <img
               width="200px"
-              src={BASE_URL + moviesCast.profile_path}
+              src={
+                moviesCast.profile_path
+                  ? BASE_URL + moviesCast.profile_path
+                  : 'https://dummyimage.com/200x300/bab8ba/000&text=no+photo'
+              }
               alt={moviesCast.original_name}
             />
             <p>{moviesCast.name}</p>

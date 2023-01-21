@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import css from '../Home/Home.module.css';
+
 import { fetchGetTrending } from '../../FetchMovies/FetchMovies';
 import { Link } from 'react-router-dom';
 // import * as MovieAPI from '../../FetchMovies/FetchMovies';
@@ -11,10 +11,10 @@ export const Home = () => {
     fetchGetTrending().then(setTrendingMovies);
   }, []);
   return (
-    <div className={css.container}>
-      <ul className={css.item}>
+    <div>
+      <ul>
         {trendingMovies.map(trendingMovie => (
-          <li className={css.gallery} key={trendingMovie.id}>
+          <li key={trendingMovie.id}>
             <Link to={`/movies/${trendingMovie.id}`}>
               {trendingMovie.title}
             </Link>
