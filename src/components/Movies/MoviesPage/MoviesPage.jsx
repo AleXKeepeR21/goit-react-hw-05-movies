@@ -5,9 +5,9 @@ import { useSearchParams } from 'react-router-dom';
 
 const DEBOUNCE_TIME = 500;
 
-export const MoviesPage = () => {
+export const MoviesPage = ({ query }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState();
+  const [searchQuery, setSearchQuery] = useState(query);
   const debauncedSearchQuery = useDebounce(searchQuery, DEBOUNCE_TIME);
 
   useEffect(() => {
@@ -21,6 +21,7 @@ export const MoviesPage = () => {
     <input
       placeholder="Enter your search query"
       onChange={evt => setSearchQuery(evt.target.value)}
+      value={searchQuery}
     />
   );
 };
