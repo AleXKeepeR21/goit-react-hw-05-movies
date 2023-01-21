@@ -12,10 +12,12 @@ export const MoviesPage = ({ query }) => {
 
   useEffect(() => {
     if (!debauncedSearchQuery) {
+      searchParams.delete('query');
+      setSearchParams({});
       return;
     }
     setSearchParams({ query: debauncedSearchQuery });
-  }, [debauncedSearchQuery, setSearchParams]);
+  }, [searchParams, debauncedSearchQuery, setSearchParams]);
 
   return (
     <input

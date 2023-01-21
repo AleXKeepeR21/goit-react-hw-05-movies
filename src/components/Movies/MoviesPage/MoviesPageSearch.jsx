@@ -15,7 +15,7 @@ export const MoviesPageSearch = () => {
 
   return (
     <>
-      <MoviesPage />
+      <MoviesPage query={query} />
 
       <ul>
         {movies.map(movie => (
