@@ -16,11 +16,17 @@ export const MoviesPageSearch = () => {
   return (
     <>
       <MoviesPage />
+
       <ul>
         {movies.map(movie => (
           <li key={movie.id}>{movie.title}</li>
         ))}
       </ul>
+      {/* <ul>
+        {movies.map(movie => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul> */}
     </>
   );
 };
