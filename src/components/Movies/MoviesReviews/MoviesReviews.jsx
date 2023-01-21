@@ -2,7 +2,7 @@ import { FetchGetMovieReviews } from 'FetchMovies/FetchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-export const MoviesReviews = () => {
+const MoviesReviews = () => {
   const { movieId } = useParams();
   const [moviesReviews, setMoviesReviews] = useState(null);
 
@@ -35,3 +35,5 @@ export const MoviesReviews = () => {
     </>
   );
 };
+
+export default MoviesReviews;

@@ -2,15 +2,18 @@ import { fetchSearchMovies } from 'FetchMovies/FetchMovies';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MoviesPage } from './MoviesPage';
 
-export const MoviesPageSearch = () => {
+const MoviesPageSearch = () => {
   const [searchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
-  const query = searchParams.get('query');
+  const query = searchParams.get('query') ?? '';
 
   useEffect(() => {
-    fetchSearchMovies(query).then(setMovies);
+    if (query) {
+      fetchSearchMovies(query).then(setMovies);
+    }
   }, [query]);
 
   // const changeParams = params => {
@@ -25,14 +28,13 @@ export const MoviesPageSearch = () => {
 
       <ul>
         {movies.map(movie => (
-          <li key={movie.id}>{movie.title}</li>
+          <li key={movie.id}>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+          </li>
         ))}
       </ul>
-      {/* <ul>
-        {movies.map(movie => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-      </ul> */}
     </>
   );
 };
+
+export default MoviesPageSearch;

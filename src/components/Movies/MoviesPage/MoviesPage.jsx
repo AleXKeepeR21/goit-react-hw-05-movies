@@ -23,7 +23,7 @@ export const MoviesPage = ({ query }) => {
     <input
       placeholder="Enter your search query"
       onChange={evt => setSearchQuery(evt.target.value)}
-      // value={searchQuery}
+      value={searchQuery}
     />
   );
 };

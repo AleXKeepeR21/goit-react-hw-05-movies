@@ -1,10 +1,11 @@
 import { FetchGetMovieCredits } from 'FetchMovies/FetchMovies';
+import css from '../MoviesCast/MoviesCast.module.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
-export const MoviesCast = () => {
+const MoviesCast = () => {
   const { movieId } = useParams();
   const [moviesCast, setMoviesCast] = useState(null);
 
@@ -18,7 +19,7 @@ export const MoviesCast = () => {
 
   return (
     <div>
-      <ul>
+      <ul className={css.cast}>
         {moviesCast.cast.map(moviesCast => (
           <li key={moviesCast.id}>
             <img
@@ -34,3 +35,5 @@ export const MoviesCast = () => {
     </div>
   );
 };
+
+export default MoviesCast;
