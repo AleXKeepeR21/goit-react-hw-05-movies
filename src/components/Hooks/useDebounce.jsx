@@ -8,7 +8,7 @@ export const useDebounce = (query, debounceTime) => {
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
-      query && setDebouncedQuery(query);
+      setDebouncedQuery(query);
     }, debounceTime);
     return () => {
       clearTimeout(timeoutRef.current);
